@@ -1,0 +1,70 @@
+$font-size-basic: 14px;
+$font-size-least: 12px;
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 20px;
+$font-size-lg: 24px;
+$font-size-xl: 30px;
+$font-size-2xl: 36px;
+$font-size-3xl: 48px;
+$font-size-4xl: 60p;
+
+@mixin min-sm {
+    @media (min-width: 320px) {
+        @content;
+    }
+}
+
+@mixin min-md {
+    @media (min-width: 769px) {
+        @content;
+    }
+}
+
+@mixin min-lg {
+    @media (min-width: 1025px) {
+        @content;
+    }
+}
+
+@mixin min-xl {
+    @media (min-width: 1441px) {
+        @content;
+    }
+}
+
+.official-font-size--latest {
+    font-size: $font-size-least;
+}
+
+.official-font-size--xs {
+    font-size: $font-size-xs;
+}
+
+.official-font-size--s {
+    font-size: $font-size-sm;
+}
+
+.official-font-size--m {
+    font-size: $font-size-md;
+
+    @include min-md {
+        font-size: 22px;
+    }
+}
+
+.official-font-size--l {
+    font-size: $font-size-lg;
+
+    @include min-lg {
+        font-size: $font-size-xl;
+    }
+}
+
+.official-font-size--xl {
+    font-size: $font-size-xl;
+
+    @include min-md {
+        font-size: $font-size-3xl;
+    }
+}
