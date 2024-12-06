@@ -36,6 +36,7 @@ export const Image = _Image.extend({
               event.preventDefault();
 
               const { schema } = view.state;
+
               const coordinates = view.posAtCoords({
                 left: event.clientX,
                 top: event.clientY,
@@ -48,12 +49,15 @@ export const Image = _Image.extend({
                   const node = schema.nodes.image.create({
                     src: readerEvent.target.result,
                   });
+
                   const transaction = view.state.tr.insert(
                     coordinates.pos,
                     node
                   );
+
                   view.dispatch(transaction);
                 };
+
                 reader.readAsDataURL(image);
               });
             },
@@ -86,9 +90,12 @@ export const Image = _Image.extend({
                   const node = schema.nodes.image.create({
                     src: readerEvent.target.result,
                   });
+
                   const transaction = view.state.tr.replaceSelectionWith(node);
+
                   view.dispatch(transaction);
                 };
+
                 reader.readAsDataURL(image);
               });
             },
