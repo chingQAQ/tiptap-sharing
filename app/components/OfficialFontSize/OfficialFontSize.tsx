@@ -45,7 +45,7 @@ export const OfficialFontSize = () => {
   }
 
   return (
-    <Container className="tiptap-sharing-02">
+    <Container className="tiptap-sharing-03">
       <h2 className="text-xl font-bold mb-2">官方字級</h2>
       <div className="border border-gray-200 rounded-lg">
         <div className="control-group">
